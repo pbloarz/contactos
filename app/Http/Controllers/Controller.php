@@ -40,7 +40,7 @@ class Controller extends BaseController
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = bcrypt($request->password);
         $user->address = $request->address;
         $user->celular = $request->celular;
         $user->save();
